@@ -1,0 +1,525 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: rgba(190, 237, 222, 0.9);
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.navbar a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: rgba(190, 237, 222, 0.8);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  letter-spacing: 4px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: rgba(190, 237, 222, 0.9);
+  max-width: 600px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.cta-btn {
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  animation: fadeInUp 1.4s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.cta-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Car Slider Section */
+.shops-section {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.slider-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 60px;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 30px;
+}
+
+.car-card {
+  min-width: calc(33.333% - 20px);
+  background: rgba(0, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  border-color: cyan;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+}
+
+.car-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 255, 255, 0.3);
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: cyan;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.car-speed {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.car-description {
+  font-size: 15px;
+  color: rgba(190, 237, 222, 0.8);
+  line-height: 1.6;
+}
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 255, 255, 0.2);
+  border: 2px solid cyan;
+  color: cyan;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
+}
+
+@media (max-width: 1024px) {
+  .car-card {
+    min-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+
+  .car-card {
+    min-width: 100%;
+  }
+
+  .slider-container {
+    padding: 0 50px;
+  }
+}
+
+/* Pricing Section */
+.pricing-section {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  position: relative;
+}
+
+.pricing-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background: rgba(0, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 40px 30px;
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  border-color: cyan;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+}
+
+.price-card.featured {
+  border-color: cyan;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.popular-tag {
+  background: cyan;
+  color: black;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.plan-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  color: cyan;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.price {
+  font-size: 48px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.features li {
+  color: rgba(190, 237, 222, 0.9);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  font-size: 16px;
+}
+
+.features li:before {
+  content: "✓ ";
+  color: cyan;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.price-btn {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+  font-size: 16px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.price-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+}
+
+/* Contact Section */
+.contact-section {
+  min-height: 100vh;
+  padding: 120px 60px 80px;
+  position: relative;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(0, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: cyan;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.contact-info p {
+  color: rgba(190, 237, 222, 0.9);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact-info strong {
+  color: white;
+  font-size: 18px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.social-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 15px cyan;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  background: rgba(0, 20, 40, 0.5);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: cyan;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(190, 237, 222, 0.5);
+}
+
+.submit-btn {
+  padding: 15px;
+  background: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+  font-size: 16px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid rgba(0, 255, 255, 0.2);
+}
+
+.footer p {
+  color: rgba(190, 237, 222, 0.8);
+  font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-card.featured {
+    transform: scale(1);
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+}

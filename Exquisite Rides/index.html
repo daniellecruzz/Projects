@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniloper | Futuristic Cars</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/323622_medium.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Header / Navbar -->
+  <header class="header">
+    <a href="#home" class="logo">DANILOPER</a>
+    <nav class="navbar">
+  <a href="#home" class="active">Home</a>
+  <a href="#features">Features</a>
+  <a href="#shops">Shops</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>REDEFINING VELOCITY</h1>
+    <p>Experience the future of automotive excellence. Where innovation meets the road.</p>
+    <a href="#shops" class="cta-btn">EXPLORE FLEET</a>
+  </section>
+
+  <!-- Car Slider Section -->
+  <section id="shops" class="shops-section">
+    <h2 class="section-title">OUR COLLECTION</h2>
+    
+    <div class="slider-container">
+      <button class="slider-btn prev" onclick="slideLeft()">‹</button>
+      
+      <div class="slider-wrapper" id="sliderWrapper">
+        
+        <!-- Car Card 1 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="assets/lambo.jpg" alt="Phantom X1">
+          </div>
+          <h3 class="car-name">Lamborghini</h3>
+          <p class="car-speed">0-100 in 1.8s | Max Speed: 420 km/h</p>
+          <p class="car-description">Pure electric hypercar with quantum propulsion. Built for speed demons who demand perfection.</p>
+        </div>
+
+        <!-- Car Card 2 -->
+        <div class="car-card">
+          <div class="car-image">
+              <img src="assets/ferrari.jpg" alt="Phantom X1">
+          </div>
+          <h3 class="car-name">Ferrari</h3>
+          <p class="car-speed">0-100 in 2.1s | Max Speed: 380 km/h</p>
+          <p class="car-description">Aerodynamic beast with AI-assisted handling. Dominates every curve with precision.</p>
+        </div>
+
+        <!-- Car Card 3 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="assets/supra.jpg" alt="Phantom X1">
+          </div>
+          <h3 class="car-name">Toyota Supra</h3>
+          <p class="car-speed">0-100 in 1.9s | Max Speed: 400 km/h</p>
+          <p class="car-description">Hybrid fusion technology meets raw power. The ultimate street predator.</p>
+        </div>
+
+        <!-- Car Card 4 -->
+        <div class="car-card">
+          <div class="car-image">
+            <span>VELOCITY PRO</span>
+          </div>
+          <h3 class="car-name">VELOCITY PRO</h3>
+          <p class="car-speed">0-100 in 2.3s | Max Speed: 360 km/h</p>
+          <p class="car-description">Track-ready performance with everyday comfort. Professional racing redefined.</p>
+        </div>
+
+        <!-- Car Card 5 -->
+        <div class="car-card">
+          <div class="car-image">
+            <span>TITAN FORCE</span>
+          </div>
+          <h3 class="car-name">TITAN FORCE</h3>
+          <p class="car-speed">0-100 in 2.0s | Max Speed: 390 km/h</p>
+          <p class="car-description">Brute force engineering with intelligent systems. Power meets sophistication.</p>
+        </div>
+
+        <!-- Car Card 6 -->
+        <div class="car-card">
+          <div class="car-image">
+            <span>AURORA GT</span>
+          </div>
+          <h3 class="car-name">AURORA GT</h3>
+          <p class="car-speed">0-100 in 2.2s | Max Speed: 370 km/h</p>
+          <p class="car-description">Elegant design meets explosive performance. The grand tourer of tomorrow.</p>
+        </div>
+
+      </div>
+      
+      <button class="slider-btn next" onclick="slideRight()">›</button>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section">
+    <h2 class="section-title">PRICING PLANS</h2>
+    
+    <div class="pricing-container">
+      
+      <!-- Price Card 1 -->
+      <div class="price-card">
+        <h3 class="plan-name">STARTER</h3>
+        <div class="price">$150,000</div>
+        <ul class="features">
+          <li>Electric Powertrain</li>
+          <li>0-100 in 3.5s</li>
+          <li>350 km Range</li>
+          <li>Basic Autopilot</li>
+          <li>1 Year Warranty</li>
+        </ul>
+        <button class="price-btn">RESERVE NOW</button>
+      </div>
+
+      <!-- Price Card 2 -->
+      <div class="price-card featured">
+        <div class="popular-tag">MOST POPULAR</div>
+        <h3 class="plan-name">PRO</h3>
+        <div class="price">$300,000</div>
+        <ul class="features">
+          <li>Quantum Propulsion</li>
+          <li>0-100 in 2.0s</li>
+          <li>500 km Range</li>
+          <li>Full Self-Driving</li>
+          <li>3 Year Warranty</li>
+          <li>Premium Interior</li>
+        </ul>
+        <button class="price-btn">RESERVE NOW</button>
+      </div>
+
+      <!-- Price Card 3 -->
+      <div class="price-card">
+        <h3 class="plan-name">ELITE</h3>
+        <div class="price">$500,000</div>
+        <ul class="features">
+          <li>Hybrid Fusion Tech</li>
+          <li>0-100 in 1.8s</li>
+          <li>700 km Range</li>
+          <li>AI Racing Mode</li>
+          <li>Lifetime Warranty</li>
+          <li>Custom Design</li>
+          <li>VIP Support</li>
+        </ul>
+        <button class="price-btn">RESERVE NOW</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">GET IN TOUCH</h2>
+    
+    <div class="contact-container">
+      
+      <div class="contact-info">
+        <h3>Visit Our Showroom</h3>
+        <p><strong>Address:</strong><br>123 Future Drive, Tech City<br>Innovation District, 12345</p>
+        <p><strong>Phone:</strong><br>09454666043 </p>
+        <p><strong>Email:</strong><br>qpdcruz@tip.edu.ph </p>
+        
+        <div class="social-links">
+          <a href="#" class="social-btn">Facebook</a>
+          <a href="#" class="social-btn">Instagram</a>
+          <a href="#" class="social-btn">Twitter</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject">
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 DANILOPER. All Rights Reserved. | Built for the Future</p>
+  </footer>
+
+ 
+    <script src="script.js"></script>
+</body>
+</html>
