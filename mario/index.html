@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Mario Bros</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="hud">
+    <div class="hb"><span class="hl">MARIO</span><span class="hv" id="score">000000</span></div>
+    <div class="hb"><span class="hl">&#9733; COINS</span><span class="hv" id="coins">&#xD7;00</span></div>
+    <div class="hb"><span class="hl">WORLD</span><span class="hv">1-1</span></div>
+    <div class="hb"><span class="hl">TIME</span><span class="hv" id="timer">400</span></div>
+    <div class="hb"><span class="hl">LIVES</span><span class="hv" id="lives">&#xD7;03</span></div>
+  </div>
+
+  <div id="wrap">
+    <canvas id="c" width="800" height="450"></canvas>
+
+    <div id="sTitle" class="screen on">
+      <div class="box">
+        <h1>SUPER<br>MARIO</h1>
+        <p class="tip">&#8592; &#8594; / A D &mdash; Move</p>
+        <p class="tip">SPACE / &uarr; &mdash; Jump</p>
+        <p class="tip">SHIFT &mdash; Run faster</p>
+        <p class="blink">&#9658; CLICK HERE TO START &#9668;</p>
+      </div>
+    </div>
+
+    <div id="sOver" class="screen">
+      <div class="box">
+        <h2>GAME OVER</h2>
+        <p class="blink">CLICK TO RETRY</p>
+      </div>
+    </div>
+
+    <div id="sWin" class="screen">
+      <div class="box">
+        <h2 style="color:#ffd700">YOU WIN! &#127881;</h2>
+        <p id="fscore"></p>
+        <p class="blink">CLICK TO PLAY AGAIN</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="ctrl">
+    <div id="cleft">
+      <button id="bL">&#9664;</button>
+      <button id="bR">&#9654;</button>
+    </div>
+    <div id="cright">
+      <button id="bRun">RUN</button>
+      <button id="bJump">JUMP</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

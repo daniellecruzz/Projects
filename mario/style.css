@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#1a0800;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;min-height:100vh;
+  font-family:'Press Start 2P',monospace;
+  overflow:hidden;user-select:none;
+}
+#hud{
+  width:800px;background:#1a0800;
+  border-bottom:3px solid #ffd700;
+  padding:8px 20px;display:flex;
+  justify-content:space-between;align-items:center;
+}
+.hb{display:flex;flex-direction:column;align-items:center;gap:4px}
+.hl{font-size:8px;color:#aaa;letter-spacing:1px}
+.hv{font-size:13px;color:#fff;text-shadow:2px 2px 0 #000}
+#wrap{position:relative;width:800px}
+#c{display:block;width:800px;height:450px;image-rendering:pixelated;cursor:pointer}
+.screen{
+  position:absolute;inset:0;display:none;
+  align-items:center;justify-content:center;
+  background:rgba(0,0,0,.80);z-index:10;cursor:pointer;
+}
+.screen.on{display:flex}
+.box{
+  text-align:center;color:#fff;padding:36px 48px;
+  border:4px solid #ffd700;background:rgba(8,3,0,.97);
+  box-shadow:0 0 40px rgba(255,215,0,.2);
+}
+.box h1{font-size:42px;color:#e52521;text-shadow:4px 4px 0 #800;letter-spacing:4px;line-height:1.3;margin-bottom:20px}
+.box h2{font-size:28px;color:#e52521;text-shadow:3px 3px 0 #600;margin-bottom:20px}
+#fscore{font-size:9px;color:#fff;margin:10px 0}
+.tip{font-size:9px;color:#ccc;margin:7px 0;line-height:2}
+.blink{font-size:10px;color:#ffd700;margin-top:20px;display:block;animation:bl .9s step-end infinite}
+@keyframes bl{50%{opacity:0}}
+#ctrl{
+  width:800px;display:flex;justify-content:space-between;
+  padding:10px 16px;background:#1a0800;border-top:3px solid #ffd700;
+}
+#cleft,#cright{display:flex;gap:10px}
+#ctrl button{
+  width:64px;height:52px;background:#222;color:#fff;
+  border:3px solid #ffd700;border-radius:4px;
+  font-family:'Press Start 2P',monospace;font-size:10px;
+  cursor:pointer;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+#ctrl button:active{background:#e52521}
+.pop{
+  position:absolute;pointer-events:none;
+  font-family:'Press Start 2P',monospace;
+  font-size:11px;color:#fff;text-shadow:1px 1px 0 #000;
+  animation:fu .9s ease-out forwards;z-index:30;
+}
+@keyframes fu{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-48px)}}
